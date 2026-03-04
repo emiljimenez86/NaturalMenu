@@ -72,25 +72,131 @@ var MENU_DATA = {
     items: [
       { name: 'Salchipapas', price: '$22.000' },
       { name: 'Salchipollo', price: '$25.000' },
-      { name: 'Salchicarne', price: '$25.000' },
-      { name: 'Pinchos pollo', price: '$30.000' }
-    ]
-  },
-  hamburguesas: {
-    title: 'Hamburguesas',
-    items: [
-      { name: 'Sencilla', price: '$18.000', desc: 'Carne, tocineta, cebolla' },
-      { name: 'Doble Carne', price: '$25.000' },
-      { name: 'De La Casa', price: '$35.000', desc: 'Tocineta, cebolla caramelizada, tomate, lechuga, queso mozarella, pepinillos agridulces, Salsa de la Casa, papas francesas' }
-    ]
+      { name: 'Salchicarne', price: '$27.000' },
+      { name: 'Pinchos pollo', price: '$30.000' },
+      { name: 'Hamburguesa Sencilla', price: '$18.000', desc: 'Carne de res, tocineta, cebolla y queso' },
+      { name: 'Hamburguesa Doble Carne', price: '$25.000', desc: 'Doble carne de res, queso y salsas de la casa' },
+      { name: 'Hamburguesa De La Casa', price: '$35.000', desc: 'Tocineta, cebolla caramelizada, tomate, lechuga, queso mozarella, pepinillos agridulces, Salsa de la Casa, papas francesas' }
+    ],
+    extra: 'Todas acompañadas con papas y salsas de la casa'
   },
   perros: {
     title: 'Perros',
     items: [
-      { name: 'Sencillo', price: '$15.000' },
+      { name: 'Sencillo', price: '$10.000', desc: 'Acompañado con papas francesas' },
       { name: 'Suizo', price: '$20.000' },
-      { name: 'De La Casa', price: '$30.000' }
+      { name: 'De La Casa', price: '$30.000', desc: 'Acompañado con papas francesas' }
     ]
+  },
+  cerdo: {
+    title: 'Cerdo',
+    items: [
+      { name: 'Costilla BBQ', price: '$40.000' },
+      { name: 'Chuletica', price: '$40.000' },
+      { name: 'Gajos de cerdo', price: '$37.000' },
+      { name: 'Lomito en salsa de champiñones', price: '$40.000' },
+      { name: 'Lomito a la milanesa', price: '$40.000' },
+      { name: 'Lomito gratinado', price: '$42.000' },
+      { name: 'Lomito hawaiano', price: '$42.000' },
+      { name: 'Ceviche de chicharrón', price: '$30.000' }
+    ]
+  },
+  arroces: {
+    title: 'Arroces y Risottos',
+    items: [
+      { name: 'Arroz con pollo', price: '$30.000' },
+      { name: 'Arroz con cerdo', price: '$30.000' },
+      { name: 'Arroz con res', price: '$30.000' },
+      { name: 'Arroz cubano', price: '$35.000' },
+      { name: 'Arroz oriental', price: '$35.000' },
+      { name: 'Arroz con camarones', price: '$47.000' },
+      { name: 'Arroz mixto', price: '$37.000' },
+      { name: 'Arroz con mariscos', price: '$47.000' },
+      { name: 'Risotto de pollo', price: '$37.000' },
+      { name: 'Risotto marinero (camarón)', price: '$38.000' }
+    ]
+  },
+  pollos: {
+    title: 'Pollos',
+    items: [
+      { name: 'Pechuga a la brasa', price: '$38.000' },
+      { name: 'Filete de pechuga', price: '$40.000' },
+      { name: 'Pechuga a la milanesa', price: '$40.000' },
+      { name: 'Pechuga hawaiana', price: '$40.000' },
+      { name: 'Pechuga en salsa de champiñones', price: '$42.000' },
+      { name: 'Pechuga gratinada', price: '$42.000' },
+      { name: 'Pechuga tres quesos', price: '$42.000' }
+    ],
+    extra: 'Todas acompañadas con papas francesas y ensalada'
+  },
+  entradas: {
+    title: 'Entradas',
+    items: [
+      { name: 'Quibbes', price: '$18.000' },
+      { name: 'Tahine', price: '$14.000' },
+      { name: 'Patacones con queso', price: '$12.000' },
+      { name: 'Patacones con hogao', price: '$12.000' },
+      { name: 'Canasticas de pollo', price: '$30.000' },
+      { name: 'Canasticas de camarón', price: '$30.000' },
+      { name: 'Chuzos de queso', price: '$12.000' }
+    ]
+  },
+  carnes: {
+    title: 'Carnes',
+    items: [
+      { name: 'Baby Beef', price: '$40.000' },
+      { name: 'Punta de anca', price: '$50.000' },
+      { name: 'Churrasco argentino', price: '$50.000' },
+      { name: 'Churrasco a la mexicana', price: '$60.000' },
+      { name: 'Churrasco de solomito', price: '$55.000' },
+      { name: 'Solomito en salsa de champiñones', price: '$45.000' },
+      { name: 'Solomito hawaiano', price: '$45.000' },
+      { name: 'Solomito gratinado', price: '$45.000' },
+      { name: 'Solomito tres quesos', price: '$45.000' },
+      { name: 'Sobrebarriga a la brasa', price: '$35.000' },
+      { name: 'Sobrebarriga a la criolla', price: '$40.000' },
+      { name: 'Lengua a la brasa', price: '$40.000' },
+      { name: 'Lengua a la criolla', price: '$41.000' },
+      { name: 'Solomito a la pimienta', price: '$45.000' },
+      { name: 'Filet Mignon', price: '$47.000' }
+    ],
+    extra: 'Todas las carnes acompañadas con papas francesas y ensalada'
+  },
+  ensaladas: {
+    title: 'Ensaladas',
+    items: [
+      { name: 'César clásica', price: '$20.000' },
+      { name: 'César clásica con pollo', price: '$30.000' }
+    ]
+  },
+  untablesSal: {
+    title: 'Untables de sal',
+    items: [
+      { name: 'Dip de tocineta', price: '$18.000' },
+      { name: 'Dip de atún', price: '$18.000' },
+      { name: 'Dip de jamón', price: '$12.000' },
+      { name: 'Dip de cebolla', price: '$12.000' }
+    ],
+    extra: 'Todos acompañados con tostadas'
+  },
+  untablesDulce: {
+    title: 'Untables de dulce',
+    items: [
+      { name: 'Dip de mora', price: '$17.000' },
+      { name: 'Dip de fresa', price: '$17.000' },
+      { name: 'Dip de durazno', price: '$17.000' },
+      { name: 'Dip de piña', price: '$17.000' }
+    ],
+    extra: 'Todos acompañados con tostadas'
+  },
+  picadas: {
+    title: 'Picadas',
+    items: [
+      { name: 'Picada Suiza', price: 'Consultar' },
+      { name: 'Picada de chicharrón', price: 'Consultar' },
+      { name: 'Picada Natural', price: 'Consultar' }
+    ],
+    extra: 'Preguntar por tamaños, precios y acompañamientos'
   },
   jugos: {
     title: 'Jugos y Bebidas',

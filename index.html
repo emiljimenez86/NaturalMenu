@@ -73,11 +73,26 @@
   <main class="page-main">
     <!-- Menu Categories: cada categoría abre en página aparte -->
     <section class="menu-categories">
+      <a href="categoria.html?cat=entradas" class="category-card">
+        <span class="category-label">Entradas</span>
+      </a>
       <a href="categoria.html?cat=cremas" class="category-card">
         <span class="category-label">Cremas</span>
       </a>
+      <a href="categoria.html?cat=pollos" class="category-card">
+        <span class="category-label">Pollos</span>
+      </a>
+      <a href="categoria.html?cat=carnes" class="category-card">
+        <span class="category-label">Carnes</span>
+      </a>
+      <a href="categoria.html?cat=cerdo" class="category-card">
+        <span class="category-label">Cerdo</span>
+      </a>
       <a href="categoria.html?cat=pastas" class="category-card">
         <span class="category-label">Pastas</span>
+      </a>
+      <a href="categoria.html?cat=arroces" class="category-card">
+        <span class="category-label">Arroces y Risottos</span>
       </a>
       <a href="categoria.html?cat=pescados" class="category-card">
         <span class="category-label">Pescados y Mariscos</span>
@@ -85,14 +100,23 @@
       <a href="categoria.html?cat=tipicos" class="category-card">
         <span class="category-label">Platos Típicos</span>
       </a>
-      <a href="categoria.html?cat=rapidas" class="category-card">
-        <span class="category-label">Comidas Rápidas</span>
+      <a href="categoria.html?cat=ensaladas" class="category-card">
+        <span class="category-label">Ensaladas</span>
       </a>
-      <a href="categoria.html?cat=hamburguesas" class="category-card">
-        <span class="category-label">Hamburguesas</span>
+      <a href="categoria.html?cat=untablesSal" class="category-card">
+        <span class="category-label">Untables de Sal</span>
+      </a>
+      <a href="categoria.html?cat=untablesDulce" class="category-card">
+        <span class="category-label">Untables de Dulce</span>
+      </a>
+      <a href="categoria.html?cat=picadas" class="category-card">
+        <span class="category-label">Picadas</span>
       </a>
       <a href="categoria.html?cat=perros" class="category-card">
         <span class="category-label">Perros</span>
+      </a>
+      <a href="categoria.html?cat=rapidas" class="category-card">
+        <span class="category-label">Comidas Rápidas</span>
       </a>
       <a href="categoria.html?cat=jugos" class="category-card">
         <span class="category-label">Jugos y Bebidas</span>
@@ -158,6 +182,14 @@
       var iosBanner = document.getElementById('ios-install-banner');
       var iosClose = document.getElementById('ios-install-close');
 
+      // Detectar si la app ya está instalada / en modo standalone (Android o iOS)
+      function esStandalone() {
+        var mql = window.matchMedia && window.matchMedia('(display-mode: standalone)');
+        var byDisplayMode = mql && mql.matches;
+        var byNavigator = window.navigator && window.navigator.standalone === true;
+        return !!(byDisplayMode || byNavigator);
+      }
+
       // Detectar si es iOS (Safari en iPhone/iPad)
       function esIOS() {
         return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -166,7 +198,7 @@
       // Mostrar u ocultar banner iOS (solo en móvil, no instalado como PWA)
       function revisarBannerIOS() {
         if (!esIOS()) return;
-        if (window.navigator.standalone === true) return;
+        if (esStandalone()) return;
         if (sessionStorage.getItem('iosInstallBannerCerrado')) return;
         iosBanner.style.display = 'block';
       }
@@ -187,7 +219,7 @@
       window.addEventListener('beforeinstallprompt', function (e) {
         e.preventDefault();
         deferredPrompt = e;
-        if (installBtn) installBtn.style.display = 'flex';
+        if (installBtn && !esStandalone()) installBtn.style.display = 'flex';
       });
 
       window.addEventListener('appinstalled', function () {
@@ -197,7 +229,7 @@
       });
 
       // En Android mostrar el botón siempre después de un momento (por si Chrome no dispara beforeinstallprompt)
-      if (esAndroid() && installBtn) {
+      if (esAndroid() && installBtn && !esStandalone()) {
         setTimeout(function () {
           installBtn.style.display = 'flex';
         }, 2000);
@@ -224,7 +256,7 @@
               if (result.outcome === 'accepted') installBtn.style.display = 'none';
               deferredPrompt = null;
             });
-          } else if (esAndroid() && androidHint) {
+          } else if (esAndroid() && androidHint && !esStandalone()) {
             androidHint.style.display = 'flex';
           }
         });

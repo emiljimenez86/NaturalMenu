@@ -11,7 +11,6 @@
 </head>
 <body class="page-categoria">
   <header class="main-header main-header--small">
-    <a href="index.html" class="back-link">← Menú</a>
     <div class="logo-container">
       <h1 class="logo">
         <a href="index.html" class="logo-frame">
@@ -19,6 +18,7 @@
         </a>
       </h1>
     </div>
+    <a href="index.html" class="back-link">← Menú</a>
   </header>
 
   <main class="category-page-main" id="category-content">
@@ -73,7 +73,28 @@
       var container = document.getElementById('category-content');
       if (typeof MENU_DATA !== 'undefined' && MENU_DATA[cat]) {
         var data = MENU_DATA[cat];
-        var html = '<h2 class="category-page-title">' + escapeHtml(data.title) + '</h2><ul class="plate-list">';
+        var html = '<h2 class="category-page-title">' + escapeHtml(data.title) + '</h2>';
+
+        // En jugos mostramos primero la tarjeta de precios (antes de la lista)
+        if (cat === 'jugos') {
+          html += ''
+            + '<section class="jugos-pricing-card">'
+            +   '<h3 class="jugos-pricing-title">Precios jugos naturales</h3>'
+            +   '<div class="jugos-pricing-options">'
+            +     '<div class="jugos-price-pill">'
+            +       '<span class="jugos-price-label">En agua</span>'
+            +       '<span class="jugos-price-value">$12.000</span>'
+            +     '</div>'
+            +     '<div class="jugos-price-pill jugos-price-pill--milk">'
+            +       '<span class="jugos-price-label">En leche</span>'
+            +       '<span class="jugos-price-value">$15.000</span>'
+            +     '</div>'
+            +   '</div>'
+            +   '<p class="jugos-pricing-note">Elige tu sabor favorito y dinos si lo quieres en agua o en leche.</p>'
+            + '</section>';
+        }
+
+        html += '<ul class="plate-list">';
         data.items.forEach(function(item) {
           html += '<li class="plate">';
 
@@ -109,6 +130,7 @@
           html += '</li>';
         });
         html += '</ul>';
+
         if (data.extra) {
           html += '<p class="category-extra">' + escapeHtml(data.extra) + '</p>';
         }
