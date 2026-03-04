@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natural Menu — Menú Digital</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Natural GastroBar">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="image/logo/LogoNaturalGastroBar.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Botón Instalar App (Android) -->
+  <button id="installBtn" class="install-btn" type="button" style="display: none;" aria-label="Instalar aplicación">
+    <span class="install-btn-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </span>
+    Instalar App
+  </button>
+
+  <!-- Instrucciones manuales Android (cuando no hay diálogo nativo) -->
+  <div id="android-install-hint" class="android-install-hint" style="display: none;" role="dialog" aria-label="Cómo instalar la app">
+    <div class="android-install-hint-inner">
+      <p><strong>Para instalar Natural GastroBar:</strong></p>
+      <p>Abre el <strong>menú de Chrome</strong> (⋮ los tres puntos arriba a la derecha) y elige <strong>«Instalar aplicación»</strong> o <strong>«Añadir a la pantalla de inicio»</strong>.</p>
+      <button type="button" class="android-install-hint-close" id="android-install-hint-close" aria-label="Cerrar">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Banner instalación iPhone -->
+  <div id="ios-install-banner" class="ios-install-banner" style="display: none;" role="dialog" aria-label="Instrucciones para instalar en iPhone">
+    <div class="ios-install-content">
+      <span class="ios-install-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </span>
+      <span>Para instalar <strong>Natural GastroBar</strong> en iPhone:</span>
+    </div>
+    <div class="ios-install-steps">
+      <div class="ios-install-step">
+        <span class="ios-install-step-num">1</span>
+        <span>Toca <strong>Compartir</strong> <svg class="step-share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      </div>
+      <div class="ios-install-step">
+        <span class="ios-install-step-num">2</span>
+        <span>Selecciona <strong>«Agregar a inicio»</strong></span>
+      </div>
+      <div class="ios-install-step">
+        <span class="ios-install-step-num">3</span>
+        <span>Toca <strong>«Agregar»</strong>. Y así de fácil te llevas nuestro menú.</span>
+      </div>
+    </div>
+    <button type="button" class="ios-install-close" id="ios-install-close" aria-label="Cerrar">×</button>
+  </div>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <h1 class="logo">
+        <div class="logo-frame">
+          <img src="image/logo/LogoNaturalGastroBar.png" alt="Natural GastroBar" class="logo-img">
+        </div>
+      </h1>
+    </div>
+    <h2 class="menu-title">Nuestro menú</h2>
+    <p class="menu-tagline">Cocina natural y algo más...</p>
+  </header>
+
+  <main class="page-main">
+    <!-- Menu Categories: cada categoría abre en página aparte -->
+    <section class="menu-categories">
+      <a href="categoria.html?cat=cremas" class="category-card">
+        <span class="category-label">Cremas</span>
+      </a>
+      <a href="categoria.html?cat=pastas" class="category-card">
+        <span class="category-label">Pastas</span>
+      </a>
+      <a href="categoria.html?cat=pescados" class="category-card">
+        <span class="category-label">Pescados y Mariscos</span>
+      </a>
+      <a href="categoria.html?cat=tipicos" class="category-card">
+        <span class="category-label">Platos Típicos</span>
+      </a>
+      <a href="categoria.html?cat=rapidas" class="category-card">
+        <span class="category-label">Comidas Rápidas</span>
+      </a>
+      <a href="categoria.html?cat=hamburguesas" class="category-card">
+        <span class="category-label">Hamburguesas</span>
+      </a>
+      <a href="categoria.html?cat=perros" class="category-card">
+        <span class="category-label">Perros</span>
+      </a>
+      <a href="categoria.html?cat=jugos" class="category-card">
+        <span class="category-label">Jugos y Bebidas</span>
+      </a>
+    </section>
+
+    <section class="contact-section">
+      <h3 class="contact-title">Dirección</h3>
+      <a href="https://maps.app.goo.gl/ojxhmL6VPi9TVXUM7" target="_blank" rel="noopener noreferrer" class="contact-link contact-address" aria-label="Ver ubicación en Google Maps">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 4.28 3.4 8.31 5.44 10.37a1.99 1.99 0 0 0 2.82 0C15.6 17.31 19 13.28 19 9c0-3.87-3.13-7-7-7z" />
+            <circle cx="12" cy="9" r="2.7" />
+          </svg>
+        </span>
+        <span class="contact-address-text">
+          Dirección: Carrera 20 la troncal frente al Cc Olímpica. Caucasia - Antioquia
+        </span>
+      </a>
+      <h3 class="contact-title">Contáctanos</h3>
+      <div class="contact-links">
+        
+        <a href="https://www.instagram.com/natural_caucasia/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Instagram">
+          <span class="contact-icon">
+            <img src="image/Redes/instagram.png" alt="Instagram">
+          </span>
+        </a>
+        <a href="https://wa.me/573136904027" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="WhatsApp">
+          <span class="contact-icon">
+            <img src="image/Redes/whatsaap.png" alt="WhatsApp">
+          </span>
+        </a>
+        <span class="contact-link contact-link--disabled" aria-label="Facebook (próximamente)">
+        <span class="contact-icon">
+          <img src="image/Redes/facebook.png" alt="Facebook (sin enlace por ahora)">
+        </span>
+        </span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>© 2026 Natural GastroBar. Todos los derechos reservados.</p>
+    <p>
+      Emil Jiménez Ortiz - Desarrollador Web
+      <a href="https://wa.me/573192364724" target="_blank" rel="noopener noreferrer" class="footer-whatsapp" aria-label="Contactar por WhatsApp">
+        <img src="image/Redes/whatsaap.png" alt="WhatsApp">
+      </a>
+    </p>
+  </footer>
+
+  <script src="menu.js"></script>
+  <script>
+    (function () {
+      // Registrar Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+      }
+
+      var installBtn = document.getElementById('installBtn');
+      var iosBanner = document.getElementById('ios-install-banner');
+      var iosClose = document.getElementById('ios-install-close');
+
+      // Detectar si es iOS (Safari en iPhone/iPad)
+      function esIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      }
+
+      // Mostrar u ocultar banner iOS (solo en móvil, no instalado como PWA)
+      function revisarBannerIOS() {
+        if (!esIOS()) return;
+        if (window.navigator.standalone === true) return;
+        if (sessionStorage.getItem('iosInstallBannerCerrado')) return;
+        iosBanner.style.display = 'block';
+      }
+
+      if (iosClose) {
+        iosClose.addEventListener('click', function () {
+          iosBanner.style.display = 'none';
+          try { sessionStorage.setItem('iosInstallBannerCerrado', '1'); } catch (e) {}
+        });
+      }
+
+      // Android: botón "Instalar App" (si hay beforeinstallprompt o siempre en Android como fallback)
+      var deferredPrompt;
+      function esAndroid() {
+        return /Android/i.test(navigator.userAgent);
+      }
+
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (installBtn) installBtn.style.display = 'flex';
+      });
+
+      window.addEventListener('appinstalled', function () {
+        deferredPrompt = null;
+        if (installBtn) installBtn.style.display = 'none';
+        if (androidHint) androidHint.style.display = 'none';
+      });
+
+      // En Android mostrar el botón siempre después de un momento (por si Chrome no dispara beforeinstallprompt)
+      if (esAndroid() && installBtn) {
+        setTimeout(function () {
+          installBtn.style.display = 'flex';
+        }, 2000);
+      }
+
+      var androidHint = document.getElementById('android-install-hint');
+      var androidHintClose = document.getElementById('android-install-hint-close');
+      if (androidHintClose) {
+        androidHintClose.addEventListener('click', function () {
+          if (androidHint) androidHint.style.display = 'none';
+        });
+      }
+      if (androidHint) {
+        androidHint.addEventListener('click', function (e) {
+          if (e.target === androidHint) androidHint.style.display = 'none';
+        });
+      }
+
+      if (installBtn) {
+        installBtn.addEventListener('click', function () {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function (result) {
+              if (result.outcome === 'accepted') installBtn.style.display = 'none';
+              deferredPrompt = null;
+            });
+          } else if (esAndroid() && androidHint) {
+            androidHint.style.display = 'flex';
+          }
+        });
+      }
+
+      // En móvil iOS mostrar banner después de un momento
+      if (esIOS() && iosBanner) {
+        setTimeout(revisarBannerIOS, 1500);
+      }
+    })();
+  </script>
+</body>
+</html>
