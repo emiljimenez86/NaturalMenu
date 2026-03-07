@@ -41,6 +41,28 @@ self.addEventListener('fetch', function (event) {
   if (event.request.mode !== 'navigate' && event.request.url.startsWith('http') && !event.request.url.startsWith(self.location.origin)) {
     return;
   }
+  var url = event.request.url || '';
+  var isMenuData = url.indexOf('menu-data.js') !== -1;
+
+  if (isMenuData) {
+    event.respondWith(
+      fetch(event.request)
+        .then(function (res) {
+          if (res && res.status === 200 && res.type === 'basic') {
+            var clone = res.clone();
+            caches.open(CACHE_NAME).then(function (cache) {
+              cache.put(event.request, clone);
+            });
+          }
+          return res;
+        })
+        .catch(function () {
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then(function (response) {
       if (response) return response;
