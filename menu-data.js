@@ -4,58 +4,58 @@ var MENU_DATA = {
     title: 'Cremas',
     items: [
       { name: 'Crema de Cebolla', price: '$15.000', image: 'image/platos/imagenesDePruebas/cremaDeCebolla.webp' },
-      { name: 'Crema de Pollo', price: '$15.000' },
+      { name: 'Crema de Pollo', price: '$18.000' },
       { name: 'Crema de Champiñones', price: '$20.000' },
       { name: 'Crema de Pollo Champiñón', price: '$22.000' },
-      { name: 'Crema de Camarones', price: '$25.000' }
+      { name: 'Crema de Camarones', price: '$30.000' }
     ]
   },
   pastas: {
     title: 'Pastas',
     items: [
-      { name: 'Lasagna de res', price: '$25.000', image: 'image/platos/imagenesDePruebas/LasañaDeRes.jpeg' },
-      { name: 'Lasagna de pollo', price: '$25.000' },
+      { name: 'Lasagna de res', price: '$30.000', image: 'image/platos/imagenesDePruebas/LasañaDeRes.jpeg' },
+      { name: 'Lasagna de pollo', price: '$30.000' },
       { name: 'Lasagna de burrata', price: '$30.000' },
       { name: 'Lasagna Especial', price: '$35.000' },
-      { name: 'Pastas con pollo', price: '$25.000' },
-      { name: 'Pastas de pollo/champiñones', price: '$30.000' },
+      { name: 'Pastas con pollo', price: '$30.000' },
+      { name: 'Pastas de pollo/champiñones', price: '$37.000' },
       { name: 'Pastas Boloñesa', price: '$25.000' },
-      { name: 'Pastas con camarones', price: '$35.000' },
-      { name: 'Pastas carbonara', price: '$25.000' }
+      { name: 'Pastas con camarones', price: '$40.000' },
+      { name: 'Pastas carbonara', price: '$30.000' }
     ]
   },
   pescados: {
     title: 'Pescados y Mariscos',
     items: [
-      { name: 'Ensopado de bagre', price: '$45.000', image: 'image/platos/imagenesDePruebas/ensopadoDeBagre.avif' },
+      { name: 'Ensopado de bagre', price: '$60.000', image: 'image/platos/imagenesDePruebas/ensopadoDeBagre.avif' },
       { name: 'Ensopado de bagre y camarones a la marinera', price: '$70.000' },
       { name: 'Filete de Robalo a la plancha', price: '$35.000' },
       { name: 'Filete de Robalo a la milanesa', price: '$40.000' },
       { name: 'Robalo gratinado', price: '$40.000' },
-      { name: 'Trucha en Salsa de Camarón', price: '$50.000' },
-      { name: 'Salmón a la plancha', price: '$45.000' },
-      { name: 'Salmón al ajillo', price: '$50.000' },
-      { name: 'Salmón en Salsa de Camarones', price: '$55.000' },
-      { name: 'Salmón en Salsa de Mariscos', price: '$60.000' },
+      { name: 'Trucha en Salsa de Camarón', price: '$60.000' },
+      { name: 'Salmón a la plancha', price: '$50.000' },
+      { name: 'Salmón al ajillo', price: '$55.000' },
+      { name: 'Salmón en Salsa de Camarones', price: '$60.000' },
+      { name: 'Salmón en Salsa de Mariscos', price: '$65.000' },
       { name: 'Salmón en Salsa de Langostinos', price: '$65.000' },
       { name: 'Langostinos a la brasa', price: '$50.000' },
       { name: 'Langostinos al ajillo', price: '$55.000' },
       { name: 'Langostinos a la milanesa', price: '$55.000' },
       { name: 'Langostinos gratinados', price: '$60.000' },
       { name: 'Bocachico', price: 'Según tamaño' },
-      { name: 'Sierra', price: 'Según tamaño' },
-      { name: 'Trucha a la plancha', price: 'Consultar' },
+      { name: 'Sierra', price: '$80.000' },
+      { name: 'Trucha a la plancha', price: '$40.000' },
       { name: 'Bagre frito', price: '$35.000' },
-      { name: 'Bagre a la criolla', price: '$40.000' },
-      { name: 'Pargo', price: 'Según tamaño' },
-      { name: 'Tilapia', price: 'Consultar' },
-      { name: 'Cachama', price: 'Consultar' },
-      { name: 'Bagre con camarones', price: '$50.000' },
-      { name: 'Bagre con mariscos', price: '$55.000' },
+      { name: 'Bagre a la criolla', price: '$45.000' },
+      { name: 'Pargo', price: '$50.000' },
+      { name: 'Tilapia', price: '$45.000' },
+      { name: 'Cachama', price: '$50.000' },
+      { name: 'Bagre con camarones', price: '$55.000' },
+      { name: 'Bagre con mariscos', price: '$60.000' },
       { name: 'Bagre gratinado', price: '$40.000' },
       { name: 'Trucha al ajillo', price: '$40.000' },
-      { name: 'Bagre a la milanesa', price: '$40.000' },
-      { name: 'Cazuela de Mariscos', price: '$45.000' },
+      { name: 'Bagre a la milanesa', price: '$45.000' },
+      { name: 'Cazuela de Mariscos', price: '$50.000' },
       { name: 'Cazuela de Camarón', price: '$40.000' },
       { name: 'Ceviche de Camarón', price: '$30.000' }
     ]
@@ -63,8 +63,8 @@ var MENU_DATA = {
   tipicos: {
     title: 'Platos Típicos',
     items: [
-      { name: 'Bandeja paisa', price: '$38.000', image: 'image/platos/imagenesDePruebas/bandeja-paisa.jpg' },
-      { name: 'Cazuela de frijol', price: '$35.000' }
+      { name: 'Bandeja paisa', price: '$40.000', image: 'image/platos/imagenesDePruebas/bandeja-paisa.jpg' },
+      { name: 'Cazuela de frijol', price: '$37.000' }
     ]
   },
   rapidas: {
@@ -73,7 +73,7 @@ var MENU_DATA = {
       { name: 'Salchipapas', price: '$22.000' },
       { name: 'Salchipollo', price: '$25.000' },
       { name: 'Salchicarne', price: '$27.000' },
-      { name: 'Pinchos pollo', price: '$30.000' },
+      { name: 'Pinchos pollo', price: '$40.000' },
       { name: 'Hamburguesa Sencilla', price: '$18.000', desc: 'Carne de res, tocineta, cebolla y queso' },
       { name: 'Hamburguesa Doble Carne', price: '$25.000', desc: 'Doble carne de res, queso y salsas de la casa' },
       { name: 'Hamburguesa De La Casa', price: '$35.000', desc: 'Tocineta, cebolla caramelizada, tomate, lechuga, queso mozarella, pepinillos agridulces, Salsa de la Casa, papas francesas' }
@@ -91,24 +91,24 @@ var MENU_DATA = {
   cerdo: {
     title: 'Cerdo',
     items: [
-      { name: 'Costilla BBQ', price: '$40.000' },
+      { name: 'Costilla BBQ', price: '$50.000' },
       { name: 'Chuletica', price: '$40.000' },
-      { name: 'Gajos de cerdo', price: '$37.000' },
-      { name: 'Lomito en salsa de champiñones', price: '$40.000' },
+      { name: 'Cañón de cerdo', price: '$40.000' },
+      { name: 'Lomito en salsa de champiñones', price: '$45.000' },
       { name: 'Lomito a la milanesa', price: '$40.000' },
       { name: 'Lomito gratinado', price: '$42.000' },
-      { name: 'Lomito hawaiano', price: '$42.000' },
-      { name: 'Ceviche de chicharrón', price: '$30.000' }
+      { name: 'Lomito hawaiano', price: '$45.000' },
+      { name: 'Ceviche de chicharrón', price: '$35.000' }
     ]
   },
   arroces: {
     title: 'Arroces y Risottos',
     items: [
-      { name: 'Arroz con pollo', price: '$30.000' },
-      { name: 'Arroz con cerdo', price: '$30.000' },
+      { name: 'Arroz con pollo', price: '$35.000' },
+      { name: 'Arroz con cerdo', price: '$35.000' },
       { name: 'Arroz con res', price: '$30.000' },
-      { name: 'Arroz cubano', price: '$35.000' },
-      { name: 'Arroz oriental', price: '$35.000' },
+      { name: 'Arroz cubano', price: '$40.000' },
+      { name: 'Arroz oriental', price: '$40.000' },
       { name: 'Arroz con camarones', price: '$47.000' },
       { name: 'Arroz mixto', price: '$37.000' },
       { name: 'Arroz con mariscos', price: '$47.000' },
@@ -119,12 +119,12 @@ var MENU_DATA = {
   pollos: {
     title: 'Pollos',
     items: [
-      { name: 'Pechuga a la brasa', price: '$38.000' },
+      { name: 'Pechuga a la brasa', price: '$40.000' },
       { name: 'Filete de pechuga', price: '$40.000' },
-      { name: 'Pechuga a la milanesa', price: '$40.000' },
-      { name: 'Pechuga hawaiana', price: '$40.000' },
-      { name: 'Pechuga en salsa de champiñones', price: '$42.000' },
-      { name: 'Pechuga gratinada', price: '$42.000' },
+      { name: 'Pechuga a la milanesa', price: '$45.000' },
+      { name: 'Pechuga hawaiana', price: '$45.000' },
+      { name: 'Pechuga en salsa de champiñones', price: '$45.000' },
+      { name: 'Pechuga gratinada', price: '$45.000' },
       { name: 'Pechuga tres quesos', price: '$42.000' }
     ],
     extra: 'Todas acompañadas con papas francesas y ensalada'
@@ -144,20 +144,20 @@ var MENU_DATA = {
   carnes: {
     title: 'Carnes',
     items: [
-      { name: 'Baby Beef', price: '$40.000' },
+      { name: 'Baby Beef', price: '$50.000' },
       { name: 'Punta de anca', price: '$50.000' },
-      { name: 'Churrasco argentino', price: '$50.000' },
-      { name: 'Churrasco a la mexicana', price: '$60.000' },
-      { name: 'Churrasco de solomito', price: '$55.000' },
-      { name: 'Solomito en salsa de champiñones', price: '$45.000' },
-      { name: 'Solomito hawaiano', price: '$45.000' },
-      { name: 'Solomito gratinado', price: '$45.000' },
+      { name: 'Churrasco argentino', price: '$60.000' },
+      { name: 'Churrasco a la mexicana', price: '$65.000' },
+      { name: 'Churrasco de solomito', price: '$60.000' },
+      { name: 'Solomito en salsa de champiñones', price: '$55.000' },
+      { name: 'Solomito hawaiano', price: '$55.000' },
+      { name: 'Solomito gratinado', price: '$55.000' },
       { name: 'Solomito tres quesos', price: '$45.000' },
-      { name: 'Sobrebarriga a la brasa', price: '$35.000' },
-      { name: 'Sobrebarriga a la criolla', price: '$40.000' },
+      { name: 'Sobrebarriga a la brasa', price: '$40.000' },
+      { name: 'Sobrebarriga a la criolla', price: '$45.000' },
       { name: 'Lengua a la brasa', price: '$40.000' },
-      { name: 'Lengua a la criolla', price: '$41.000' },
-      { name: 'Solomito a la pimienta', price: '$45.000' },
+      { name: 'Lengua a la criolla', price: '$45.000' },
+      { name: 'Solomito a la pimienta', price: '$55.000' },
       { name: 'Filet Mignon', price: '$47.000' }
     ],
     extra: 'Todas las carnes acompañadas con papas francesas y ensalada'
