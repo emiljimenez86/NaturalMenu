@@ -99,7 +99,12 @@
           html += '<li class="plate">';
 
           if (item.image) {
-            html += '<div class="plate-media"><img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '"></div>';
+            var mediaClass = 'plate-media';
+            if (item.imageLayout === 'portrait' || item.imageLayout === 'landscape') {
+              mediaClass += ' plate-media--' + item.imageLayout;
+            }
+            var mediaData = item.imageLayout ? ' data-orientation="' + escapeHtml(item.imageLayout) + '"' : '';
+            html += '<div class="' + mediaClass + '"' + mediaData + '><img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" loading="lazy" decoding="async"></div>';
           }
 
           html += '<div class="plate-header">';
@@ -137,6 +142,7 @@
         container.innerHTML = html;
         document.title = 'Natural Menu — ' + data.title;
 
+        ajustarMarcosImagenPlato();
         inicializarPedidoSimple();
       } else {
         container.innerHTML = '<p class="loading-msg">Categoría no encontrada. <a href="index.html">Volver al menú</a></p>';
@@ -145,6 +151,47 @@
         var div = document.createElement('div');
         div.textContent = s;
         return div.innerHTML;
+      }
+
+      function ajustarMarcoImagen(img) {
+        var media = img.closest('.plate-media');
+        if (!media) return;
+        var w = img.naturalWidth;
+        var h = img.naturalHeight;
+        if (!w || !h) return;
+        var forzado = media.getAttribute('data-orientation');
+        var esVertical = forzado === 'portrait' || (forzado !== 'landscape' && h > w);
+        media.classList.remove('plate-media--portrait', 'plate-media--landscape');
+        media.style.aspectRatio = '';
+        if (esVertical) {
+          media.classList.add('plate-media--portrait');
+          /* Foto vertical guardada con píxeles “acostados” (ancho > alto) */
+          if (forzado === 'portrait' && w > h) {
+            media.style.aspectRatio = '3 / 4';
+          } else {
+            media.style.aspectRatio = w + ' / ' + h;
+          }
+        } else {
+          media.classList.add('plate-media--landscape');
+          media.style.aspectRatio = '4 / 3';
+        }
+      }
+
+      function ajustarMarcosImagenPlato() {
+        var imgs = document.querySelectorAll('.plate-media img');
+        imgs.forEach(function (img) {
+          function aplicar() {
+            ajustarMarcoImagen(img);
+          }
+          img.addEventListener('load', aplicar);
+          if (img.complete) {
+            if (img.decode) {
+              img.decode().then(aplicar).catch(aplicar);
+            } else {
+              aplicar();
+            }
+          }
+        });
       }
 
       function inicializarPedidoSimple() {

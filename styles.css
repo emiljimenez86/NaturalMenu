@@ -488,21 +488,46 @@ body {
   white-space: nowrap;
 }
 .plate-desc {
-  grid-column: 1 / -1;
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: -0.1rem;
 }
+/* Marco de imagen en celular: proporción según orientación (clases vía JS) */
 .plate-media {
-  grid-column: 1 / -1;
-  margin-top: 0.4rem;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: 1px solid var(--border-gold);
+  overflow: hidden;
+}
+.plate-media--landscape {
+  aspect-ratio: 4 / 3;
+}
+.plate-media--portrait {
+  width: 100%;
+  max-height: min(75vh, 520px);
 }
 .plate-media img {
   width: 100%;
-  max-height: 180px;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-position: center;
+  display: block;
+  image-orientation: from-image;
+}
+.plate-media--landscape img {
+  object-fit: contain;
+}
+/* Verticales: llenan toda la tarjeta */
+.plate-media--portrait img {
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border-gold);
 }
 .plate-add {
   align-self: flex-end;
@@ -844,9 +869,16 @@ body {
   .menu-categories { gap: 0.75rem; padding: 1rem; }
   .category-card { padding: 1rem 0.5rem; font-size: 0.85rem; min-height: 88px; }
   .category-icon { width: 36px; height: 36px; }
+  .category-page-main { padding: 1rem 0.75rem 1.75rem; }
+  .plate { padding: 0.75rem; margin-bottom: 0.85rem; }
+  .plate-name { font-size: 1.15rem; }
+  .plate-price { font-size: 1.05rem; }
+  .plate-media--portrait { max-height: min(68vh, 400px); }
 }
 @media (min-width: 768px) {
   .menu-categories { max-width: 520px; gap: 1.25rem; }
   .contact-section { max-width: 520px; }
   .category-page-main { padding: 2rem 1.5rem; }
+  .plate-media--landscape { max-height: 280px; }
+  .plate-media--portrait { max-height: 360px; }
 }
