@@ -145,7 +145,8 @@ var MENU_DATA = {
     title: 'Carnes',
     items: [
       { name: 'Baby Beef', price: '$60.000' },
-      { name: 'Punta de anca', price: '$60.000' },
+      { name: 'Punta de anca', price: '$45.000' },
+      { name: 'Churrasco', price: '$45.000' },
       { name: 'Solomito en salsa de champiñones', price: '$65.000' },
       { name: 'Solomito hawaiano', price: '$65.000' },
       { name: 'Solomito gratinado', price: '$60.000' },
